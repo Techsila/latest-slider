@@ -36,7 +36,6 @@ main {
 
 .title {
   color: var(--color_title) !important;
-  margin-left: -60px !important;
 }
 
 .latest-wrapper {
