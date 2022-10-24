@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family={slide_font}');
+
+html {
+  --black: #000;          /*Black*/
+  --white: #FFF;          /*White*/  
+  --color2: {color2};
+  --color_title: {color_title};
+}
+
+body {
+  margin: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  font-family: {slide_font};
+  text-transform: uppercase;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  justify-content: {slider_way} !important;
+}
+
+.color2 {
+  color: var(--color2);
+}
+
+.white {
+  color: var(--white);
+}
+
+.title {
+  color: var(--color_title) !important;
+  margin-left: -60px !important;
+}
+
+.latest-wrapper {
+	display: flex;
+  	align-items: center;
+	position: relative;
+  background: {backgroundColor};
+  padding: 0 {paddingBox}px;
+  height: {height}px;
+	margin: 0 !important;
+	width: auto;
+}
+
+.img-top {
+  position: relative;
+  max-width: 100%;
+  height: calc({height}px + {padding}px);
+  margin-top: -5px;
+}
+
+.txt-bot {
+  color: var(--color2);
+  font-size: {fontSize}px;
+  width: auto;
+padding-left: {padding}px;
+  padding-right: 10px;
+}
+
+.anim {
+  position: absolute;
+  display: none;
+  width: auto;
+  height: {height}px;
+}
+
+.anim div {
+  position: relative;
+}
+
+
+.play {
+  display: block;
+}
+
+
+/*********************
+* Animation
+*********************/
+
+@keyframes anim-text-left {
+  0% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  65% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }  
+}
+
+@keyframes anim-text-right {
+  0% {
+    right: -100%;
+  }
+  45% {
+    right: -100%;
+  }
+  65% {
+    right: 0;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+.anim.play.left div {
+  animation: 5s cubic-bezier(0.19, 0.76, 0.32, 1) 2 alternate both;
+  animation-name: anim-text-left;
+}
+
+
+.anim.play.right div {
+  animation: 5s cubic-bezier(0.19, 0.76, 0.32, 1) 2 alternate both;
+  animation-name: anim-text-right;
+}
+
